@@ -10,7 +10,15 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-    
+  mat_inv <- NULL
+  if (ncol(x) == nrow(x)){
+    mat_inv <<- solve(x)
+  }
+  
+  else {
+    message("Not a square matrix!")
+    return(x)
+  }
 }
 
 
@@ -18,4 +26,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+  if (!is.null(mat_inv)){
+    message("getting cached data...")
+    return(mat_inv)
+  }
+  else{
+    makeCacheMatrix
+  }
+  
 }
