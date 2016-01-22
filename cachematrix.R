@@ -23,6 +23,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
+## The cacheSolve function will first check if the inverse of the input matrix exists,
+## If not, it will call makeCheMatrix to calculate the inverse.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
